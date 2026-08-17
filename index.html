@@ -395,7 +395,7 @@
         let currentList = [];
         let currentIndex = 0;
         let timerInterval;
-        let timeLeft = 10;
+        let timeLeft = 12;
 
         // ฟังก์ชันสลับตำแหน่งอักษรแบบคงช่องว่างไว้ (ฉลาดขึ้น)
         function generateAnagram(word) {
@@ -458,8 +458,8 @@
             document.getElementById('answerSection').style.display = 'none';
             document.getElementById('btnNext').style.display = 'none';
             
-            // ตั้งค่าเวลาใหม่
-            timeLeft = 10;
+            // ตั้งค่าเวลาใหม่เป็น 12 วินาที
+            timeLeft = 12;
             document.getElementById('timerText').innerText = timeLeft;
             document.getElementById('progressFill').style.width = '100%';
             
@@ -469,7 +469,7 @@
             timerInterval = setInterval(() => {
                 timeLeft--;
                 document.getElementById('timerText').innerText = timeLeft;
-                document.getElementById('progressFill').style.width = (timeLeft * 10) + '%';
+                document.getElementById('progressFill').style.width = ((timeLeft / 12) * 100) + '%';
                 
                 if (timeLeft <= 0) {
                     clearInterval(timerInterval);
